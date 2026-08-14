@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kevin Beideman's research on a verifier-controlled AI workflow for Routing and Spectrum Allocation using C++, CPLEX, Python, structured JSON, and binary-search refinement.">
+    <meta name="theme-color" content="#070909">
+    <title>AI-Assisted Network Optimization | Kevin Beideman</title>
+    <link rel="icon" type="image/png" href="pictures/identity-mark.png">
+    <link rel="stylesheet" href="style.css?v=20260812-2">
+</head>
+
+<body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+        <div class="site-header__inner">
+            <a class="brand" href="index.html" aria-label="Kevin Beideman home"><img class="brand__mark" src="pictures/identity-mark.png" alt="" width="34" height="34"><span class="brand__name">Kevin Beideman</span></a>
+            <nav class="site-nav" aria-label="Primary navigation">
+                <a href="projects.html" aria-current="page">Work</a>
+                <a href="blog.html">Blog</a>
+                <a href="about.html">About</a>
+                <a class="nav-resume" href="MyResume.pdf" target="_blank" rel="noopener">Resume</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content" class="page-main">
+        <section class="page-hero">
+            <div class="page-shell page-hero__content">
+                <p class="eyebrow">Summer Research &middot; 2025</p>
+                <h1>AI-Assisted Network Optimization</h1>
+                <p class="page-hero__lead">
+                    A verifier-controlled workflow that combines an exact optimization baseline with structured
+                    generative AI proposals for Routing and Spectrum Allocation in elastic optical networks.
+                </p>
+                <div class="page-meta">
+                    <span>Routing + Spectrum Allocation</span>
+                    <span>C++ / CPLEX</span>
+                    <span>Python</span>
+                    <span>Structured JSON</span>
+                    <span>Generative AI</span>
+                </div>
+            </div>
+        </section>
+
+        <article class="page-shell case-study">
+            <section class="case-overview reveal">
+                <div class="case-overview__copy">
+                    <p>
+                        Routing and Spectrum Allocation (RSA) requires a network controller to select a path for each
+                        traffic demand and assign a contiguous block of spectrum that remains consistent across every
+                        link in that path. Shared links must also preserve guard bands to prevent interference.
+                    </p>
+                    <p>
+                        Our research paired a C++ Integer Linear Programming baseline with a generative AI proposal
+                        pipeline. The model could suggest paths and spectrum blocks, but every response passed through
+                        structured parsing and deterministic feasibility checks before it could be accepted. This kept
+                        AI in a narrow, auditable role while code owned constraints, resource accounting, and comparison
+                        against an exact optimization model.
+                    </p>
+                </div>
+                <ul class="fact-list" aria-label="Research summary">
+                    <li><span>Status</span><strong>Research prototype</strong></li>
+                    <li><span>Case Study</span><strong>Elastic optical networks</strong></li>
+                    <li><span>Exact Baseline</span><strong>IBM ILOG CPLEX</strong></li>
+                    <li><span>Core Pattern</span><strong>Propose, verify, refine</strong></li>
+                </ul>
+            </section>
+
+            <section class="case-section reveal">
+                <div class="case-section__heading">
+                    <span>01 / The Problem</span>
+                    <h2>Routing traffic without breaking spectrum constraints.</h2>
+                </div>
+                <div class="case-grid">
+                    <article class="case-block">
+                        <h3>Path Selection</h3>
+                        <p>Each demand needs a valid source-to-destination path through a directed network without creating, losing, or branching flow.</p>
+                    </article>
+                    <article class="case-block">
+                        <h3>Spectrum Assignment</h3>
+                        <p>Every demand receives one gap-free block of subcarriers, and the same slot indices must continue across every link in its route.</p>
+                    </article>
+                    <article class="case-block">
+                        <h3>Shared-Link Safety</h3>
+                        <p>Allocations using the same link cannot overlap and must preserve the configured guard band between neighboring spectrum blocks.</p>
+                    </article>
+                    <article class="case-block">
+                        <h3>Exact Baseline</h3>
+                        <p>A C++/CPLEX Integer Linear Program models routing, spectrum placement, continuity, guard bands, and shared-link non-overlap, providing ground truth for small and moderate instances.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="case-section reveal">
+                <div class="case-section__heading">
+                    <span>02 / Co-Intelligence Workflow</span>
+                    <h2>Giving AI a constrained role inside a verifiable system.</h2>
+                </div>
+                <figure class="case-visual">
+                    <div class="identity-map">
+                        <div class="map-node map-node--primary">
+                            <strong>RSA Instance</strong>
+                            <span>Topology / demands / budget</span>
+                        </div>
+                        <div class="map-node">
+                            <strong>AI Proposal</strong>
+                            <span>Paths + spectrum blocks</span>
+                        </div>
+                        <div class="map-node map-node--accent">
+                            <strong>Parser</strong>
+                            <span>Validate + normalize JSON</span>
+                        </div>
+                        <div class="map-node">
+                            <strong>Checker</strong>
+                            <span>Enforce RSA constraints</span>
+                        </div>
+                        <div class="map-node map-node--accent">
+                            <strong>Controller</strong>
+                            <span>Update bounds + re-prompt</span>
+                        </div>
+                    </div>
+                    <figcaption>The model proposes a candidate; deterministic code decides whether it is usable and whether the resource target should be tightened.</figcaption>
+                </figure>
+            </section>
+
+            <section class="case-section reveal">
+                <div class="case-section__heading">
+                    <span>03 / Verification and Search</span>
+                    <h2>Making proposals machine-checkable and iteratively useful.</h2>
+                </div>
+                <div class="case-grid">
+                    <article class="case-block">
+                        <h3>Structured Interface</h3>
+                        <p>The prompt encodes the network, demands, restrictions, and resource target as JSON. A Python parser validates required fields and normalizes each response into a consistent representation.</p>
+                    </article>
+                    <article class="case-block">
+                        <h3>Feasibility Checker</h3>
+                        <p>Deterministic checks reject invalid paths, nonexistent links, noncontiguous or out-of-range slots, continuity failures, collisions, and insufficient guard bands.</p>
+                    </article>
+                    <article class="case-block">
+                        <h3>Resource Accounting</h3>
+                        <p>The checker independently recomputes data and guard usage, compares it with the declared total, and returns precise failures instead of trusting the model's self-report.</p>
+                    </article>
+                    <article class="case-block">
+                        <h3>Bounded Refinement</h3>
+                        <p>A binary-search controller sets a resource target, verifies the response, tightens the bounds based on feasibility, and retains the best valid candidate.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="case-section reveal">
+                <div class="case-section__heading">
+                    <span>04 / Contribution and Findings</span>
+                    <h2>What I built and what the research demonstrated.</h2>
+                </div>
+                <div class="case-grid">
+                    <article class="case-block">
+                        <h3>C++ / CPLEX Implementation</h3>
+                        <p>I authored the documented RSA implementation, including link-based routing, flow conservation, spectrum placement, path reconstruction, and guarded non-overlap constraints.</p>
+                    </article>
+                    <article class="case-block">
+                        <h3>Verifier-Controlled AI</h3>
+                        <p>As a project co-author, I contributed to a workflow that connected structured prompting with JSON normalization, feasibility checking, and iterative budget control.</p>
+                    </article>
+                    <article class="case-block">
+                        <h3>Central Finding</h3>
+                        <p>Generative AI was most useful as a bounded proposal mechanism. Reliability came from strict schemas, deterministic verification, and an exact optimization reference.</p>
+                    </article>
+                    <article class="case-block">
+                        <h3>Limits and Next Steps</h3>
+                        <p>The model often repeated similar strategies, limiting exploration. Better initial bounds, richer checker feedback, and deliberate strategy diversification could improve the loop.</p>
+                    </article>
+                </div>
+                <div class="case-actions">
+                    <a class="button button--primary" href="projects.html">Back to Research</a>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer class="site-footer">
+        <div class="site-footer__inner">
+            <div class="site-footer__top">
+                <div><p class="eyebrow">Start a Conversation</p><h2>Interested in security, infrastructure, or research? Let's connect.</h2></div>
+                <a class="footer-email" href="mailto:kevinbeideman17@gmail.com">kevinbeideman17@gmail.com</a>
+            </div>
+            <div class="site-footer__bottom">
+                <div class="footer-links">
+                    <a href="https://github.com/SkiritaiKevin" target="_blank" rel="noopener">GitHub</a>
+                    <a href="https://www.linkedin.com/in/kevin-beideman-93b70b252/" target="_blank" rel="noopener">LinkedIn</a>
+                    <a href="https://www.youtube.com/@CodingwithKevin12" target="_blank" rel="noopener">YouTube</a>
+                    <a href="MyResume.pdf" target="_blank" rel="noopener">Resume</a>
+                </div>
+                <p>&copy; <span data-current-year></span> Kevin Beideman</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js?v=20260812-1"></script>
+</body>
+
+</html>

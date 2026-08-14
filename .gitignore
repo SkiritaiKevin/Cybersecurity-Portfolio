@@ -1,0 +1,14 @@
+# Local workspace files
+.agents/
+tmp/
+projects/
+python.py
+
+# Superseded and unused visual assets
+pictures/Kim Sion Japan.png
+pictures/R.png
+pictures/Screenshot_1.png
+pictures/github-mark.png
+pictures/paper-fibers.png
+pictures/sakura.png
+pictures/tcbme.png

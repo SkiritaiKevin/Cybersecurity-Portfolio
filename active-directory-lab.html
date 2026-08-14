@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kevin Beideman's completed enterprise Active Directory security lab covering Windows Server 2022, Windows 11, AD DS, DNS, AGDLP, Group Policy, security telemetry, investigation, and validated hardening.">
+    <meta name="theme-color" content="#070909">
+    <title>Active Directory Security Lab | Kevin Beideman</title>
+    <link rel="icon" type="image/png" href="pictures/identity-mark.png">
+    <link rel="stylesheet" href="style.css?v=20260812-2">
+</head>
+
+<body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header">
+        <div class="site-header__inner">
+            <a class="brand" href="index.html" aria-label="Kevin Beideman home">
+                <img class="brand__mark" src="pictures/identity-mark.png" alt="" width="34" height="34">
+                <span class="brand__name">Kevin Beideman</span>
+            </a>
+            <nav class="site-nav" aria-label="Primary navigation">
+                <a href="projects.html" aria-current="page">Work</a>
+                <a href="blog.html">Blog</a>
+                <a href="about.html">About</a>
+                <a class="nav-resume" href="MyResume.pdf" target="_blank" rel="noopener">Resume</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content" class="page-main">
+        <section class="page-hero">
+            <div class="page-shell page-hero__content">
+                <p class="eyebrow">Cyber Lab &middot; Completed August 2026</p>
+                <h1>Enterprise Active Directory Security Lab</h1>
+                <p class="page-hero__lead">
+                    A completed enterprise-style Windows domain spanning identity, authorization, centralized policy,
+                    security telemetry, investigation, and validated hardening across a Domain Controller and Windows 11 client.
+                </p>
+                <div class="page-meta">
+                    <span>Windows Server 2022</span>
+                    <span>Windows 11</span>
+                    <span>AD DS + DNS</span>
+                    <span>Group Policy</span>
+                    <span>PowerShell</span>
+                </div>
+            </div>
+        </section>
+
+        <article class="page-shell case-study">
+            <section class="case-overview reveal">
+                <div class="case-overview__copy">
+                    <p>
+                        I built a small enterprise Windows domain in VMware centered on
+                        <strong>SRV-DC01</strong>, a Windows Server 2022 Domain Controller, and
+                        <strong>CLIENT01</strong>, a domain-joined Windows 11 workstation. The environment includes
+                        AD DS, DNS, departmental OUs, Group Policy, AGDLP authorization, and secured SMB resources.
+                    </p>
+                    <p>
+                        I then treated the domain as a security environment: enabling role-specific telemetry,
+                        investigating authentication and identity events, hardening password and SMB controls, and
+                        retesting the system to verify that security improvements preserved business functionality.
+                    </p>
+                    <div class="case-actions">
+                        <a class="button button--primary" href="https://github.com/SkiritaiKevin/Enterprise-Active-Directory-Security-Lab" target="_blank" rel="noopener">View GitHub Evidence</a>
+                    </div>
+                </div>
+                <ul class="fact-list" aria-label="Project summary">
+                    <li>
+                        <span>Status</span>
+                        <strong>Completed August 2026</strong>
+                    </li>
+                    <li>
+                        <span>Domain</span>
+                        <strong>kevinlab.local</strong>
+                    </li>
+                    <li>
+                        <span>Systems</span>
+                        <strong>SRV-DC01 + CLIENT01</strong>
+                    </li>
+                    <li>
+                        <span>Evidence</span>
+                        <strong>Architecture + testing + scripts</strong>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="case-section reveal">
+                <div class="case-section__heading">
+                    <span>01 / Architecture</span>
+                    <h2>A domain environment built across identity, policy, and resources.</h2>
+                </div>
+                <figure class="case-visual">
+                    <div class="identity-map">
+                        <div class="map-node map-node--primary">
+                            <strong>SRV-DC01</strong>
+                            <span>AD DS / DNS / Kerberos</span>
+                        </div>
+                        <div class="map-node">
+                            <strong>CLIENT01</strong>
+                            <span>Windows 11 domain client</span>
+                        </div>
+                        <div class="map-node map-node--accent">
+                            <strong>Department OUs</strong>
+                            <span>IT / HR / Finance / Sales</span>
+                        </div>
+                        <div class="map-node">
+                            <strong>AGDLP</strong>
+                            <span>Role to resource authorization</span>
+                        </div>
+                        <div class="map-node map-node--accent">
+                            <strong>SMB Resources</strong>
+                            <span>Share + NTFS permissions</span>
+                        </div>
+                    </div>
+                    <figcaption>Current environment: a domain-joined client discovers and authenticates to SRV-DC01, while group-based authorization controls access to departmental resources.</figcaption>
+                </figure>
+            </section>
+
+            <section class="case-section reveal">
+                <div class="case-section__heading">
+                    <span>02 / Build and Access</span>
+                    <h2>From domain services to tested authorization.</h2>
+                </div>
+                <div class="case-grid">
+                    <article class="case-block">
+                        <h3>Enterprise Foundation</h3>
+                        <ul>
+                            <li>Created the kevinlab.local domain and forest on SRV-DC01.</li>
+                            <li>Configured AD DS, DNS, departmental OUs, users, groups, and server networking.</li>
+                            <li>Validated NTDS, DNS, KDC, and Netlogon services.</li>
+                        </ul>
+                    </article>
+                    <article class="case-block">
+                        <h3>Client and Policy</h3>
+                        <ul>
+                            <li>Joined CLIENT01 to the domain and verified DNS discovery, Kerberos, and the secure channel.</li>
+                            <li>Placed the workstation in its intended OU and applied role-specific Group Policy.</li>
+                            <li>Confirmed policy scope with gpupdate and gpresult.</li>
+                        </ul>
+                    </article>
+                    <article class="case-block">
+                        <h3>Authorization Testing</h3>
+                        <p>Implemented AGDLP and assigned share and NTFS permissions through resource groups. Cross-department tests proved that HR and Finance users could modify their own shares while unauthorized access remained denied.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="case-section reveal">
+                <div class="case-section__heading">
+                    <span>03 / Detection and Hardening</span>
+                    <h2>Building visibility, then improving the baseline.</h2>
+                </div>
+                <div class="case-grid">
+                    <article class="case-block">
+                        <h3>Security Telemetry</h3>
+                        <p>Created separate workstation and Domain Controller auditing policies for logons, process creation, account and group changes, command lines, and PowerShell Script Block Logging.</p>
+                    </article>
+                    <article class="case-block">
+                        <h3>Event Investigation</h3>
+                        <p>Generated and investigated events 4624, 4625, 4688, 4720, 4726, 4728, 4729, and 4104, connecting each event to its actor, target, source system, and security control.</p>
+                    </article>
+                    <article class="case-block">
+                        <h3>Identity Hardening</h3>
+                        <p>Reviewed highly privileged groups, kept departmental users separated from administrative roles, and raised the minimum domain password length from seven to 12 characters.</p>
+                    </article>
+                    <article class="case-block">
+                        <h3>Host and SMB Hardening</h3>
+                        <p>Verified Windows Firewall across both systems, confirmed SMBv1 was disabled, retained modern SMB functionality, and required SMB signing for integrity protection.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="case-section reveal">
+                <div class="case-section__heading">
+                    <span>04 / Outcome</span>
+                    <h2>A tested security environment with evidence behind every claim.</h2>
+                </div>
+                <div class="case-grid">
+                    <article class="case-block">
+                        <h3>Problems Solved</h3>
+                        <p>Corrected CLIENT01's DNS configuration to restore domain discovery and used PowerShell to verify a group-membership change that did not persist through the GUI.</p>
+                    </article>
+                    <article class="case-block">
+                        <h3>Controls Retested</h3>
+                        <p>Confirmed that domain services, authentication, Kerberos, departmental access, SMB sharing, and security logging remained operational after hardening.</p>
+                    </article>
+                    <article class="case-block">
+                        <h3>Documented Evidence</h3>
+                        <p>Organized the architecture, configuration screenshots, access tests, event evidence, hardening assessment, troubleshooting notes, and useful commands in a public repository.</p>
+                    </article>
+                </div>
+                <div class="case-actions">
+                    <a class="button button--primary" href="https://github.com/SkiritaiKevin/Enterprise-Active-Directory-Security-Lab" target="_blank" rel="noopener">Explore the Repository</a>
+                    <a class="button button--secondary" href="projects.html">Back to Work</a>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer class="site-footer">
+        <div class="site-footer__inner">
+            <div class="site-footer__top">
+                <div>
+                    <p class="eyebrow">Start a Conversation</p>
+                    <h2>Interested in security, infrastructure, or research? Let's connect.</h2>
+                </div>
+                <a class="footer-email" href="mailto:kevinbeideman17@gmail.com">kevinbeideman17@gmail.com</a>
+            </div>
+            <div class="site-footer__bottom">
+                <div class="footer-links">
+                    <a href="https://github.com/SkiritaiKevin" target="_blank" rel="noopener">GitHub</a>
+                    <a href="https://www.linkedin.com/in/kevin-beideman-93b70b252/" target="_blank" rel="noopener">LinkedIn</a>
+                    <a href="https://www.youtube.com/@CodingwithKevin12" target="_blank" rel="noopener">YouTube</a>
+                    <a href="MyResume.pdf" target="_blank" rel="noopener">Resume</a>
+                </div>
+                <p>&copy; <span data-current-year></span> Kevin Beideman</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js?v=20260812-1"></script>
+</body>
+
+</html>
