@@ -5,18 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Kevin Beideman is a Cybersecurity M.S. candidate working across offensive security, defensive engineering, Windows identity, networking, and published AI security research.">
-    <meta name="theme-color" content="#070909">
+    <meta name="theme-color" content="#00006b">
     <meta property="og:title" content="Kevin Beideman | Cybersecurity Portfolio">
     <meta property="og:description" content="Offensive and defensive security, Windows identity, network systems, published AI security research, and hands-on cyber labs.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://kbeideman.neocities.org/">
-    <meta property="og:image" content="https://kbeideman.neocities.org/pictures/cyber-hero.webp">
+    <meta property="og:image" content="https://kbeideman.neocities.org/pictures/identity-mark.png">
     <meta name="twitter:card" content="summary_large_image">
     <title>Kevin Beideman | Cybersecurity Portfolio</title>
     <link rel="canonical" href="https://kbeideman.neocities.org/">
-    <link rel="icon" type="image/png" href="pictures/identity-mark.png">
-    <link rel="preload" as="image" href="pictures/cyber-hero.webp" type="image/webp">
-    <link rel="stylesheet" href="style.css?v=20260814-2">
+    <link rel="icon" type="image/svg+xml" href="pictures/identity-mark.svg?v=20260828-1">
+    <link rel="stylesheet" href="style.css?v=20260828-6">
 </head>
 
 <body class="home-page">
@@ -25,7 +24,7 @@
     <header class="site-header">
         <div class="site-header__inner">
             <a class="brand" href="index.html" aria-label="Kevin Beideman home">
-                <img class="brand__mark" src="pictures/identity-mark.png" alt="" width="34" height="34">
+                <img class="brand__mark" src="pictures/identity-mark.svg" alt="" width="34" height="34">
                 <span class="brand__name">Kevin Beideman</span>
             </a>
             <nav class="site-nav" aria-label="Primary navigation">
@@ -37,203 +36,184 @@
         </div>
     </header>
 
-    <main id="main-content">
-        <section class="home-hero">
-            <div class="home-hero__inner">
-                <div class="hero-copy">
-                    <p class="eyebrow">Cybersecurity M.S. Candidate &middot; Philadelphia</p>
-                    <h1>Kevin Beideman.</h1>
-                    <p class="hero-lead">
-                        I examine how systems are built, attacked, and strengthened, backed by hands-on Windows and
-                        network labs, a Computer Science and IT foundation, and published AI security research.
-                    </p>
-                    <div class="hero-actions">
-                        <a class="button button--primary" href="active-directory-lab.html">View Cyber Lab <span aria-hidden="true">&rarr;</span></a>
-                        <a class="button button--secondary" href="projects.html">Explore My Work</a>
-                    </div>
-                    <p class="hero-availability">
-                        <span class="status-dot" aria-hidden="true"></span>
-                        Focused on offensive testing, clear vulnerability reporting, practical remediation, and responsible AI use.
-                    </p>
-                </div>
-                <p class="hero-signature" lang="ja">夢を持って生きろ。</p>
-            </div>
-            <a class="scroll-cue" href="#featured-work" aria-label="Continue to selected work">
-                <span>Selected work</span>
-                <span class="scroll-cue__arrow" aria-hidden="true">&darr;</span>
-            </a>
-        </section>
-
-        <section class="proof-band" aria-label="Career highlights">
-            <div class="proof-grid">
-                <div class="proof-item">
-                    <strong>4.0 / 4.0</strong>
-                    <span>Graduate GPA</span>
-                </div>
-                <div class="proof-item">
-                    <strong>M.S. Cybersecurity</strong>
-                    <span>Expected May 2027</span>
-                </div>
-                <div class="proof-item">
-                    <strong>B.S. CS + IT</strong>
-                    <span>Graduated May 2026</span>
-                </div>
-                <div class="proof-item">
-                    <strong>IEEE Published</strong>
-                    <span>Generative AI security education</span>
-                </div>
-            </div>
-        </section>
-
-        <section class="section" id="featured-work">
-            <div class="section__inner">
-                <div class="section-heading reveal">
-                    <div>
-                        <p class="eyebrow">Selected Work</p>
-                        <h2>Systems, security, and software in practice.</h2>
-                    </div>
-                    <p>Hands-on infrastructure, peer-reviewed research, and software built around real workflows.</p>
-                </div>
-
-                <div class="work-grid">
-                    <article class="work-card work-card--wide reveal">
-                        <div class="work-card__content">
-                            <span class="work-label">Completed Cyber Lab &middot; August 2026</span>
-                            <h3>Enterprise Active Directory Security Lab</h3>
+    <main id="main-content" class="page-main portal-home">
+        <div class="portal-layout">
+            <div class="portal-primary">
+                <section class="retro-panel welcome-panel">
+                    <div class="retro-panel__title">Welcome to the Archive</div>
+                    <div class="retro-panel__body welcome-layout">
+                        <div>
+                            <p class="archive-kicker">Philadelphia, PA // Systems online</p>
+                            <h1>Kevin Beideman</h1>
+                            <p class="welcome-lead">
+                                Cybersecurity M.S. candidate documenting security labs, software projects, published
+                                research, and the systems behind them.
+                            </p>
                             <p>
-                                A Windows Server 2022 and Windows 11 domain lab spanning AD DS, DNS, AGDLP, secured
+                                My work connects offensive testing, defensive engineering, Windows identity,
+                                networking, vulnerability reporting, practical remediation, and responsible AI use.
+                            </p>
+                            <div class="archive-actions">
+                                <a class="archive-button" href="projects.html">[ Browse all work ]</a>
+                                <a class="archive-button" href="MyResume.pdf" target="_blank" rel="noopener">[ Open resume ]</a>
+                            </div>
+                        </div>
+                        <div class="welcome-mark" aria-hidden="true">
+                            <img src="pictures/identity-mark.svg" alt="" width="112" height="112">
+                            <span>KB // SEC</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="retro-panel" id="featured-work">
+                    <div class="retro-panel__title">Featured Case File</div>
+                    <div class="retro-panel__body featured-file">
+                        <div class="featured-file__copy">
+                            <p class="archive-kicker">FILE 001 // COMPLETED AUGUST 2026</p>
+                            <h2><a href="active-directory-lab.html">Enterprise Active Directory Security Lab</a></h2>
+                            <p>
+                                A Windows Server 2022 and Windows 11 domain lab covering AD DS, DNS, AGDLP, secured
                                 SMB shares, Group Policy, event investigation, PowerShell telemetry, and validated
                                 security hardening.
                             </p>
-                            <div class="tech-line" aria-label="Technologies used">
-                                <span>Windows Server 2022</span>
-                                <span>Windows 11</span>
-                                <span>AD DS</span>
-                                <span>Group Policy</span>
-                                <span>PowerShell</span>
-                                <span>Event Viewer</span>
-                            </div>
-                            <a class="text-link" href="active-directory-lab.html">Read the case study <span aria-hidden="true">&rarr;</span></a>
+                            <dl class="file-metadata">
+                                <div><dt>Environment</dt><dd>Windows Server 2022 / Windows 11</dd></div>
+                                <div><dt>Focus</dt><dd>Identity / Telemetry / Hardening</dd></div>
+                                <div><dt>Evidence</dt><dd>Configuration, tests, events, remediation</dd></div>
+                            </dl>
+                            <a class="archive-button" href="active-directory-lab.html">[ Open case file ]</a>
                         </div>
-                        <div class="work-card__visual" aria-label="Active Directory access model diagram">
-                            <div class="identity-map">
-                                <div class="map-node map-node--primary">
-                                    <strong>SRV-DC01</strong>
-                                    <span>AD DS + DNS + auditing</span>
-                                </div>
-                                <div class="map-node">
-                                    <strong>CLIENT01</strong>
-                                    <span>Windows 11 domain client</span>
-                                </div>
-                                <div class="map-node map-node--accent">
-                                    <strong>AGDLP</strong>
-                                    <span>Role-to-resource access</span>
-                                </div>
-                                <div class="map-node">
-                                    <strong>Security Events</strong>
-                                    <span>Authentication + identity</span>
-                                </div>
-                                <div class="map-node map-node--accent">
-                                    <strong>Hardening</strong>
-                                    <span>Policy + firewall + SMB</span>
-                                </div>
-                            </div>
+                        <div class="archive-diagram" aria-label="Active Directory lab systems">
+                            <div><strong>SRV-DC01</strong><span>AD DS + DNS</span></div>
+                            <span class="archive-diagram__link" aria-hidden="true">&lt; DOMAIN &gt;</span>
+                            <div><strong>CLIENT01</strong><span>Windows 11</span></div>
+                            <div><strong>AGDLP</strong><span>Role access</span></div>
+                            <span class="archive-diagram__link" aria-hidden="true">&lt; EVENTS &gt;</span>
+                            <div><strong>4104 / 4625</strong><span>Telemetry</span></div>
                         </div>
-                    </article>
-
-                    <article class="work-card reveal">
-                        <div class="work-card__visual work-card__visual--poster">
-                            <img src="pictures/genai-poster-preview.webp" alt="Generative AI security research poster" loading="lazy">
-                        </div>
-                        <div class="work-card__content">
-                            <span class="work-label">Published Research</span>
-                            <h3>Generative AI and Security Education</h3>
-                            <p>Research on ChatGPT, Gemini, social engineering, ethical hacking workflows, and safe classroom integration.</p>
-                            <a class="text-link" href="summer_research_1.html">Explore the research <span aria-hidden="true">&rarr;</span></a>
-                        </div>
-                    </article>
-
-                    <article class="work-card reveal">
-                        <div class="work-card__visual">
-                            <img src="pictures/lrg-preview.webp" alt="LRG team composition web tool home screen" loading="lazy">
-                        </div>
-                        <div class="work-card__content">
-                            <span class="work-label">Software Project</span>
-                            <h3>LRG Team Composition Tool</h3>
-                            <p>A deployed JavaScript application with composition planning, persistent settings, saved builds, and screenshot exports.</p>
-                            <a class="text-link" href="lrg.html">View the project <span aria-hidden="true">&rarr;</span></a>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="section section--soft">
-            <div class="section__inner">
-                <div class="section-heading reveal">
-                    <div>
-                        <p class="eyebrow">Technical Focus</p>
-                        <h2>Built at the intersection of systems and security.</h2>
                     </div>
-                    <p>My current work connects Windows identity, network services, adversarial thinking, automation, and the responsible use of AI in security.</p>
-                </div>
+                </section>
 
-                <div class="capabilities-grid">
-                    <article class="capability reveal">
-                        <span class="capability__number">01 / Identity</span>
-                        <h3>Windows Administration</h3>
-                        <p>Building structured access, policy, telemetry, and hardening controls across a Windows domain.</p>
-                        <ul>
-                            <li>Active Directory + Group Policy</li>
-                            <li>AGDLP + SMB/NTFS security</li>
-                            <li>PowerShell + event auditing</li>
-                        </ul>
-                    </article>
-                    <article class="capability reveal">
-                        <span class="capability__number">02 / Security</span>
-                        <h3>Attack and Defense</h3>
-                        <p>Analyzing services, traffic, and system behavior from both attacker and defender perspectives.</p>
-                        <ul>
-                            <li>DNS + DHCP + TCP/IP</li>
-                            <li>Wireshark + Nmap</li>
-                            <li>Windows Event Viewer</li>
-                        </ul>
-                    </article>
-                    <article class="capability reveal">
-                        <span class="capability__number">03 / Research</span>
-                        <h3>AI Security</h3>
-                        <p>Studying how generative AI changes offensive, defensive, and educational security workflows.</p>
-                        <ul>
-                            <li>Ethical hacking education</li>
-                            <li>Social engineering research</li>
-                            <li>Security task automation</li>
-                        </ul>
-                    </article>
-                </div>
-            </div>
-        </section>
+                <section class="retro-panel">
+                    <div class="retro-panel__title">Project Directory</div>
+                    <div class="retro-panel__body retro-panel__body--flush">
+                        <div class="archive-list archive-list--head" aria-hidden="true">
+                            <span>TYPE</span><span>FILE NAME</span><span>STATUS</span><span>UPDATED</span>
+                        </div>
+                        <a class="archive-list" href="active-directory-lab.html">
+                            <span class="archive-type">LAB</span><strong>Enterprise Active Directory Security</strong><span>Complete</span><time datetime="2026-08">2026-08</time>
+                        </a>
+                        <a class="archive-list" href="summer_research_1.html">
+                            <span class="archive-type">PAPER</span><strong>Generative AI &amp; Security Education</strong><span>Published</span><time datetime="2025">2025</time>
+                        </a>
+                        <a class="archive-list" href="summer_research_2.html">
+                            <span class="archive-type">RESEARCH</span><strong>AI-Assisted Network Optimization</strong><span>Documented</span><time datetime="2025">2025</time>
+                        </a>
+                        <a class="archive-list" href="lrg.html">
+                            <span class="archive-type">SOFTWARE</span><strong>LRG Team Composition Tool</strong><span>Deployed</span><time datetime="2026-06">2026-06</time>
+                        </a>
+                        <a class="archive-list" href="tcbme.html">
+                            <span class="archive-type">RESEARCH</span><strong>TCBMe Gamification Project</strong><span>Complete</span><time datetime="2025">2025</time>
+                        </a>
+                        <a class="archive-list" href="codingclub.html">
+                            <span class="archive-type">TEAM</span><strong>La Salle Programming Team</strong><span>Archived</span><time datetime="2026">2026</time>
+                        </a>
+                    </div>
+                </section>
 
-        <section class="section">
-            <div class="section__inner story-grid reveal">
-                <div>
-                    <p class="eyebrow">The Story</p>
-                    <h2>From building software to understanding how systems break and how to strengthen them.</h2>
-                </div>
-                <div class="story-copy">
-                    <p>
-                        My Computer Science and Information Technology background taught me how applications,
-                        infrastructure, and networks fit together. Undergraduate research then pulled me deeper into
-                        ethical hacking, AI-assisted security, and the human side of technical systems.
-                    </p>
-                    <p>
-                        I am now pursuing an M.S. in Cybersecurity while building hands-on Windows identity and network
-                        labs. The goal is straightforward: understand systems deeply enough to test, investigate,
-                        and strengthen them.
-                    </p>
-                    <a class="text-link" href="about.html">Read more about my path <span aria-hidden="true">&rarr;</span></a>
-                </div>
+                <section class="retro-panel">
+                    <div class="retro-panel__title">Research &amp; Software Preview</div>
+                    <div class="retro-panel__body preview-directory">
+                        <article class="preview-file">
+                            <img src="pictures/genai-poster-preview.webp" alt="Generative AI security research poster" loading="lazy">
+                            <div>
+                                <p class="archive-kicker">IEEE ISEC 2025</p>
+                                <h2><a href="summer_research_1.html">Generative AI and Security Education</a></h2>
+                                <p>Ethical hacking workflows, social engineering, classroom labs, and responsible AI integration.</p>
+                            </div>
+                        </article>
+                        <article class="preview-file">
+                            <img src="pictures/lrg-preview.webp" alt="LRG team composition tool interface" loading="lazy">
+                            <div>
+                                <p class="archive-kicker">DEPLOYED JAVASCRIPT APPLICATION</p>
+                                <h2><a href="lrg.html">LRG Team Composition Tool</a></h2>
+                                <p>Composition planning, persistent settings, saved builds, and downloadable screenshots.</p>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="retro-panel">
+                    <div class="retro-panel__title">Latest Writing</div>
+                    <div class="retro-panel__body retro-panel__body--flush">
+                        <a class="journal-row" href="blog-cybersecurity-job-search.html">
+                            <time datetime="2026-08-12">08/12/2026</time>
+                            <span>Looking for My Place in Cybersecurity</span>
+                            <strong>READ</strong>
+                        </a>
+                        <a class="journal-row" href="blog-thousand-year-door.html">
+                            <time datetime="2026-06-03">06/03/2026</time>
+                            <span>Returning to the Thousand-Year Door</span>
+                            <strong>READ</strong>
+                        </a>
+                    </div>
+                </section>
             </div>
-        </section>
+
+            <aside class="portal-sidebar" aria-label="Quick information">
+                <section class="retro-panel">
+                    <div class="retro-panel__title">Profile</div>
+                    <div class="retro-panel__body">
+                        <dl class="sidebar-facts">
+                            <div><dt>Role</dt><dd>Cybersecurity M.S. Candidate</dd></div>
+                            <div><dt>Location</dt><dd>Philadelphia Area</dd></div>
+                            <div><dt>Graduate GPA</dt><dd>4.0 / 4.0</dd></div>
+                            <div><dt>Availability</dt><dd><span class="status-light" aria-hidden="true"></span> Open to opportunities</dd></div>
+                        </dl>
+                    </div>
+                </section>
+
+                <section class="retro-panel">
+                    <div class="retro-panel__title">Directory</div>
+                    <nav class="sidebar-directory" aria-label="Portfolio directory">
+                        <a href="projects.html"><span>01</span>Cyber Labs</a>
+                        <a href="projects.html#research-heading"><span>02</span>Research</a>
+                        <a href="projects.html#software-heading"><span>03</span>Software</a>
+                        <a href="blog.html"><span>04</span>Journal</a>
+                        <a href="about.html"><span>05</span>About Kevin</a>
+                        <a href="MyResume.pdf" target="_blank" rel="noopener"><span>06</span>Resume.pdf</a>
+                    </nav>
+                </section>
+
+                <section class="retro-panel">
+                    <div class="retro-panel__title">Technical Index</div>
+                    <div class="retro-panel__body tag-index">
+                        <span>Active Directory</span><span>PowerShell</span><span>Windows Server</span><span>Wireshark</span><span>Nmap</span><span>Python</span><span>JavaScript</span><span>Generative AI</span>
+                    </div>
+                </section>
+
+                <section class="retro-panel">
+                    <div class="retro-panel__title">Site Log</div>
+                    <div class="retro-panel__body site-log">
+                        <p><time datetime="2026-08-28">08.28.26</time> Archive interface rebuilt.</p>
+                        <p><time datetime="2026-08-15">08.15.26</time> Resume file updated.</p>
+                        <p><time datetime="2026-08-12">08.12.26</time> Journal opened.</p>
+                    </div>
+                </section>
+
+                <section class="retro-panel">
+                    <div class="retro-panel__title">External Links</div>
+                    <div class="sidebar-directory">
+                        <a href="https://github.com/SkiritaiKevin" target="_blank" rel="noopener">GitHub</a>
+                        <a href="https://www.linkedin.com/in/kevin-beideman-93b70b252/" target="_blank" rel="noopener">LinkedIn</a>
+                        <a href="https://www.youtube.com/@CodingwithKevin12" target="_blank" rel="noopener">YouTube</a>
+                        <a href="mailto:kevinbeideman17@gmail.com">Copy Email</a>
+                    </div>
+                </section>
+
+                <p class="sidebar-quote" lang="ja">夢を持って生きろ。</p>
+            </aside>
+        </div>
     </main>
 
     <footer class="site-footer">
