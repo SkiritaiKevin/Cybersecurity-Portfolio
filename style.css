@@ -4212,7 +4212,7 @@ a {
 }
 
 .brand::after {
-    content: "SYSTEMS / SECURITY / RESEARCH   システム / セキュリティ / 研究";
+    content: "SYSTEMS / SECURITY / RESEARCH  |  システム / セキュリティ / 研究";
     border-top: 1px solid var(--retro-red);
     color: var(--retro-red);
     padding-top: 4px;
