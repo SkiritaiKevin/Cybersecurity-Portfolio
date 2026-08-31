@@ -87,42 +87,46 @@ if ("IntersectionObserver" in window) {
     revealElements.forEach((element) => element.classList.add("is-visible"));
 }
 
+const musicTrackBaseUrl = window.location.hostname.endsWith("neocities.org")
+    ? "https://raw.githubusercontent.com/SkiritaiKevin/Cybersecurity-Portfolio/main/audio/"
+    : "audio/";
+
 const musicTracks = [
     {
         title: "X-Naut Fortress",
-        src: "audio/x-naut-fortress.mp3"
+        src: `${musicTrackBaseUrl}x-naut-fortress.mp3`
     },
     {
         title: "Title Theme",
-        src: "audio/title-theme.mp3"
+        src: `${musicTrackBaseUrl}title-theme.mp3`
     },
     {
         title: "Pit of 100 Trials",
-        src: "audio/pit-of-100-trials.mp3"
+        src: `${musicTrackBaseUrl}pit-of-100-trials.mp3`
     },
     {
         title: "We're Counting on You, Mario!",
-        src: "audio/were-counting-on-you-mario.mp3"
+        src: `${musicTrackBaseUrl}were-counting-on-you-mario.mp3`
     },
     {
         title: "Zess T.'s Cooking",
-        src: "audio/zess-ts-cooking.mp3"
+        src: `${musicTrackBaseUrl}zess-ts-cooking.mp3`
     },
     {
         title: "What an Enormous Dragon!",
-        src: "audio/what-an-enormous-dragon.mp3"
+        src: `${musicTrackBaseUrl}what-an-enormous-dragon.mp3`
     },
     {
         title: "World 2 Hurry Up!",
-        src: "audio/world-2-hurry-up.mp3"
+        src: `${musicTrackBaseUrl}world-2-hurry-up.mp3`
     },
     {
         title: "World 3 Hurry Up!",
-        src: "audio/world-3-hurry-up.mp3"
+        src: `${musicTrackBaseUrl}world-3-hurry-up.mp3`
     },
     {
         title: "World of Darkness",
-        src: "audio/world-of-darkness.mp3"
+        src: `${musicTrackBaseUrl}world-of-darkness.mp3`
     }
 ];
 
