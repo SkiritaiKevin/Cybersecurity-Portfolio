@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta name="theme-color" content="#00006b">
+    <meta name="description" content="A little Minesweeper break in Kevin Beideman's personal corner.">
+    <title>Minesweeper | Kevin Beideman</title>
+    <link rel="icon" type="image/svg+xml" href="pictures/identity-mark.svg?v=20260828-1">
+    <link rel="stylesheet" href="style.css?v=20260830-4">
+    <link rel="stylesheet" href="minesweeper.css?v=20260903-1">
+</head>
+
+<body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+        <div class="site-header__inner">
+            <a class="brand" href="index.html" aria-label="Kevin Beideman home"><img class="brand__mark" src="pictures/identity-mark.svg" alt="" width="34" height="34"><span class="brand__name">Kevin Beideman</span></a>
+            <nav class="site-nav" aria-label="Primary navigation">
+                <a href="projects.html">Work</a>
+                <a href="blog.html">Blog</a>
+                <a href="about.html">About</a>
+                <a class="nav-resume" href="MyResume.pdf" target="_blank" rel="noopener">Resume</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content" class="page-main minesweeper-page">
+        <a class="arcade-back" href="hobbies.html#gaming">&larr; Outside the lab</a>
+        <section class="minesweeper" aria-labelledby="game-title" data-minesweeper>
+            <header class="mine-titlebar">
+                <img src="pictures/minesweeper/bomb.svg" alt="" width="20" height="20">
+                <h1 id="game-title">Minesweeper</h1>
+                <span lang="ja">マインスイーパー</span>
+            </header>
+            <div class="mine-controls">
+                <label class="mine-difficulty">Difficulty
+                    <select id="mine-difficulty" disabled>
+                        <option value="beginner">Beginner · 9 × 9</option>
+                        <option value="intermediate">Intermediate · 16 × 16</option>
+                        <option value="expert">Expert · 30 × 16</option>
+                    </select>
+                </label>
+                <div class="mine-tools">
+                    <div class="mine-modes" role="group" aria-label="Square action">
+                        <button type="button" class="mine-tool" id="mine-reveal" aria-label="Reveal mode" aria-pressed="true" title="Reveal mode (Enter or Space on a square)" disabled><img src="pictures/minesweeper/reveal.svg" alt="" width="20" height="20"></button>
+                        <button type="button" class="mine-tool" id="mine-flag" aria-label="Flag mode" aria-pressed="false" title="Flag mode (or right-click / F on a square)" disabled><img src="pictures/minesweeper/flag.svg" alt="" width="20" height="20"></button>
+                    </div>
+                    <button type="button" class="mine-tool" id="mine-sound" aria-label="Sound effects" aria-pressed="true" title="Mute sound effects" disabled><img src="pictures/minesweeper/sound.svg" alt="" width="20" height="20"></button>
+                </div>
+            </div>
+            <div class="mine-scoreboard">
+                <div class="mine-stat"><span>MINES</span><output id="mine-count" class="mine-counter" aria-label="Mines minus flags">010</output></div>
+                <button type="button" id="mine-restart" class="mine-tool mine-restart" aria-label="New game" title="New game" disabled><img src="pictures/minesweeper/restart.svg" alt="" width="24" height="24"></button>
+                <div class="mine-stat"><span>TIME</span><output id="mine-timer" class="mine-counter" aria-label="Elapsed seconds" aria-live="off">000</output></div>
+            </div>
+            <div class="mine-board-scroll" role="region" aria-label="Minesweeper board">
+                <div id="mine-board" class="mine-board" role="grid" aria-label="Minesweeper" aria-busy="true" aria-disabled="true"></div>
+            </div>
+            <div class="mine-statusbar">
+                <p id="mine-status" role="status" aria-live="polite" aria-atomic="true">Loading game...</p>
+                <span class="mine-best" title="Best time on this device"><img src="pictures/minesweeper/trophy.svg" alt="" width="14" height="14">Best: <span id="mine-best">--</span></span>
+            </div>
+            <noscript><p class="mine-error">JavaScript is needed to play Minesweeper.</p></noscript>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="site-footer__inner">
+            <div class="site-footer__top">
+                <div><p class="eyebrow">Say Hello</p><h2>Got a game recommendation? I'd love to hear it.</h2></div>
+                <a class="footer-email" href="mailto:kevinbeideman17@gmail.com">kevinbeideman17@gmail.com</a>
+            </div>
+            <div class="site-footer__bottom">
+                <div class="footer-links">
+                    <a href="https://github.com/SkiritaiKevin" target="_blank" rel="noopener">GitHub</a>
+                    <a href="https://www.linkedin.com/in/kevin-beideman-93b70b252/" target="_blank" rel="noopener">LinkedIn</a>
+                    <a href="https://www.youtube.com/@CodingwithKevin12" target="_blank" rel="noopener">YouTube</a>
+                    <a href="MyResume.pdf" target="_blank" rel="noopener">Resume</a>
+                </div>
+                <p>&copy; <span data-current-year></span> Kevin Beideman</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js?v=20260830-5"></script>
+    <script src="vendor/minesweeperjs-engine/minesweeperjs-engine.js?v=1.0.3"></script>
+    <script src="minesweeper.js?v=20260903-2"></script>
+</body>
+
+</html>

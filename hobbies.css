@@ -1,0 +1,374 @@
+/* Personal-page styles stay separate from the professional portfolio. */
+.personal-page {
+    --personal-rule: #92958d;
+    padding: 26px 28px 30px;
+    background: #f7f8f2;
+    color: #252626;
+    font-size: 14px;
+    line-height: 1.65;
+}
+
+.personal-page :is(h1, h2, h3, p, figure, dl, ol) {
+    margin: 0;
+}
+
+.personal-page :is(h1, h2, h3) {
+    color: #222829;
+    letter-spacing: 0;
+}
+
+.personal-page a:hover {
+    color: #9b2924;
+}
+
+.personal-page :focus-visible {
+    outline: 2px solid #003f8f;
+    outline-offset: 4px;
+}
+
+.personal-intro {
+    padding-bottom: 23px;
+    border-bottom: 3px double #424b4f;
+}
+
+.personal-intro > a,
+.personal-bottom,
+.personal-index {
+    font-family: "MS Gothic", "Courier New", monospace;
+    font-size: 12px;
+}
+
+.personal-intro h1 {
+    margin: 10px 0 5px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 34px;
+    line-height: 1.15;
+    font-weight: 700;
+    text-transform: none;
+}
+
+.personal-intro h1 span {
+    color: #b52f2a;
+}
+
+.personal-intro p {
+    max-width: 620px;
+}
+
+.personal-layout {
+    display: grid;
+    grid-template-columns: 155px minmax(0, 1fr);
+    gap: 28px;
+}
+
+.personal-index {
+    align-self: start;
+    position: sticky;
+    top: 20px;
+    padding-top: 25px;
+    overflow-wrap: anywhere;
+}
+
+.personal-index h2 {
+    margin-bottom: 9px;
+    font-size: 13px;
+    font-family: inherit;
+}
+
+.personal-index ol {
+    padding: 0;
+    list-style: none;
+    counter-reset: interests;
+}
+
+.personal-index li {
+    counter-increment: interests;
+    border-bottom: 1px dotted #b7bbb5;
+}
+
+.personal-index li a {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    padding: 7px 0;
+}
+
+.personal-index li a::before {
+    content: counter(interests, decimal-leading-zero);
+    color: #9b2924;
+    font-size: 10px;
+}
+
+.personal-index .personal-index__note {
+    margin: 24px 0 9px;
+    color: #515850;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 15px;
+    font-style: italic;
+}
+
+.personal-entries,
+.interest-pair > *,
+.game-feature > *,
+.soccer-note > *,
+.fashion-note > *,
+.liminal-note > * {
+    min-width: 0;
+}
+
+.interest {
+    padding: 24px 0;
+    border-bottom: 1px dotted var(--personal-rule);
+    scroll-margin-top: 20px;
+}
+
+.interest-heading {
+    display: flex;
+    align-items: baseline;
+    gap: 9px;
+    margin-bottom: 16px;
+}
+
+.interest-heading > span {
+    color: #9b2924;
+    font: 11px "Courier New", monospace;
+}
+
+.interest-heading h2 {
+    font: 700 22px/1.25 Georgia, "Times New Roman", serif;
+}
+
+.personal-page h3 {
+    margin-bottom: 10px;
+    font: 700 18px/1.3 Georgia, "Times New Roman", serif;
+}
+
+.personal-page p + p,
+.personal-page p + a,
+.personal-photo + p,
+.personal-photo + h3 {
+    margin-top: 12px;
+}
+
+.game-feature {
+    display: grid;
+    grid-template-columns: minmax(0, 0.88fr) minmax(0, 1fr);
+    align-items: start;
+    gap: 22px;
+}
+
+.personal-photo img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #353e3e;
+    background: #e0e4df;
+}
+
+.personal-photo figcaption {
+    margin-top: 5px;
+    color: #50584f;
+    font-family: "MS Gothic", "Courier New", monospace;
+    font-size: 10px;
+    line-height: 1.45;
+}
+
+.personal-page .personal-label {
+    margin-bottom: 6px;
+    color: #9b2924;
+    font: 11px "MS Gothic", "Courier New", monospace;
+}
+
+.game-feature__text > a {
+    display: inline-block;
+}
+
+.game-notes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    padding-top: 20px;
+}
+
+.game-notes dt {
+    font-weight: 700;
+    color: #263f36;
+}
+
+.game-notes dd {
+    margin: 4px 0 0;
+    font-size: 13px;
+}
+
+.personal-page .arcade-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    max-width: 100%;
+    margin-top: 22px;
+    padding: 9px 12px;
+    border: 2px solid;
+    border-color: #fff #626565 #626565 #fff;
+    background: #c5c8c8;
+    color: #00006b;
+    box-shadow: 1px 1px 0 #071126;
+    font: 700 13px/1.4 "MS Gothic", "Courier New", monospace;
+    text-decoration: none;
+}
+
+.arcade-link img { flex-shrink: 0; }
+.personal-page .arcade-link:hover { background: #e2e5e0; color: #9b2924; }
+.personal-page .arcade-link:active { border-color: #626565 #fff #fff #626565; }
+
+.interest-pair {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.soccer-note,
+.fashion-note {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr);
+    align-items: start;
+    gap: 14px;
+}
+
+.soccer-note p,
+.fashion-note p {
+    font-size: 13px;
+}
+
+.personal-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px 16px;
+    font-size: 12px;
+}
+
+.personal-page .personal-links {
+    margin-top: 14px;
+}
+
+.liminal-note {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 22px;
+}
+
+.interest--tech p {
+    max-width: 600px;
+}
+
+.personal-credits {
+    margin-top: 20px;
+    color: #50584f;
+    font-size: 11px;
+    overflow-wrap: anywhere;
+}
+
+.personal-credits summary {
+    width: fit-content;
+    cursor: pointer;
+    color: #003f8f;
+}
+
+.personal-credits ul {
+    padding-left: 18px;
+}
+
+.personal-credits li + li {
+    margin-top: 8px;
+}
+
+.personal-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 24px;
+}
+
+@media (max-width: 900px) {
+    .personal-page {
+        padding: 22px;
+    }
+
+    .personal-layout {
+        grid-template-columns: 130px minmax(0, 1fr);
+        gap: 20px;
+    }
+
+    .interest-pair {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0;
+    }
+
+    .soccer-note,
+    .fashion-note {
+        grid-template-columns: 130px minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .personal-page {
+        padding: 18px 15px 24px;
+    }
+
+    .personal-intro h1 {
+        font-size: 28px;
+    }
+
+    .personal-layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0;
+    }
+
+    .personal-index {
+        position: static;
+        padding-top: 17px;
+    }
+
+    .personal-index ol {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 18px;
+    }
+
+    .personal-index__note,
+    .personal-index > a {
+        display: none;
+    }
+
+    .game-feature {
+        grid-template-columns: minmax(0, 0.78fr) minmax(0, 1fr);
+        gap: 16px;
+    }
+
+    .game-feature__text p,
+    .game-feature__text > a {
+        font-size: 13px;
+    }
+
+    .liminal-note {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 15px;
+    }
+}
+
+@media (max-width: 420px) {
+    .game-feature {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .game-feature .personal-photo {
+        max-width: 245px;
+        margin-inline: auto;
+    }
+
+    .game-notes {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 15px;
+    }
+}
